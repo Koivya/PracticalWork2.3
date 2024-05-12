@@ -16,7 +16,7 @@ namespace PracticalWork2._3
         }
 
         // отправляет запрос на получение всех id пользователей для проверки
-        public static List<string> CheckIdQuery()
+        public static List<string> GetAllIdQuery()
         {
             var querySql = $"SELECT id FROM \"ToDo\".\"User\"";
             using var cmd = new NpgsqlCommand(querySql, DatabaseService.GetSqlConnection());
@@ -42,7 +42,7 @@ namespace PracticalWork2._3
         }
 
         // отправляет запрос на получение id пользователя
-        public static string GetUserQuery(string login, string password)
+        public static string GetUserIdQuery(string login, string password)
         {
             var querySql = $"select id from \"ToDo\".\"User\" where login = '{login}' and password = '{password}'";
             using var cmd = new NpgsqlCommand(querySql, DatabaseService.GetSqlConnection());
