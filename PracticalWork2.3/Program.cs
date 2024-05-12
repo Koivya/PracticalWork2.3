@@ -125,7 +125,7 @@ namespace PracticalWork2._3
             Console.Write("Введите пароль: ");
             string passwordInput = Console.ReadLine();
 
-            string id = DatabaseRequests.GetUserQuery(loginInput, passwordInput);
+            string id = DatabaseRequests.GetUserIdQuery(loginInput, passwordInput);
 
             if (!string.IsNullOrEmpty(id))
             {
@@ -143,7 +143,7 @@ namespace PracticalWork2._3
             Console.Write("\nВведите ID: ");
             string idInput = Console.ReadLine();
 
-            List<string> id = DatabaseRequests.CheckIdQuery();
+            List<string> id = DatabaseRequests.GetAllIdQuery();
 
             if (id.Contains(idInput))
             {
